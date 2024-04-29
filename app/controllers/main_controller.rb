@@ -1,6 +1,7 @@
 class MainController < ApplicationController 
     def index
-        flash.now[:notice] = "Logged in successfully" #flash with .now persists 1 time 
-        flash.now[:alert] = "Invalid email or password"
+      if session[:user_id]
+        @user = User.find_by(id:session[:user_id])  ## find only will throw error if user not found
+      end
     end
 end
