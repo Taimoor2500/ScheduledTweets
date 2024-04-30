@@ -19,6 +19,33 @@ root to: "main#index"
   post "sign_up", to:"registrations#create"
 
 
+  #delete route
+
+  delete "logout", to:"sessions#destroy"
+
+
+  #sign in route
+  get "sign_in", to: "sessions#new"
+  post "sign_in", to:"sessions#create"
+
+
+
+  #password
+
+  get "password", to:"passwords#edit" , as: :edit_password
+  patch "password", to: "passwords#update"
+
+
+  get "password/reset", to: "password_resets#new"
+  post "password/reset" , to: "password_resets#create"
+
+
+  get "password/reset/edit", to: "password_resets#edit"
+  patch "password/reset/edit", to: "password_resets#update"
+ 
+
+
+
 
   # Defines the root path route ("/")
   # root "posts#index"

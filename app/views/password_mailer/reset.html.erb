@@ -1,0 +1,5 @@
+Hi <%= params[:user].email%>,<br/>
+
+someone requested a password reset link, if it was ypu click it else ignore, link expres in 15 min
+
+<%= link_to "Reset password", password_reset_edit_url(token: @token)%>
