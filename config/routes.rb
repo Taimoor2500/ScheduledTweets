@@ -45,7 +45,11 @@ root to: "main#index"
  
 
 
+#omini auth
+get "/auth/twitter/callback", to: "omniauth_callbacks#twitter"
 
+resources :twitter_accounts
+resources :tweets
 
   # Defines the root path route ("/")
   # root "posts#index"
